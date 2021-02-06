@@ -1,10 +1,13 @@
 package com.example.phrasesappforfinalexam;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import java.util.Objects;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -13,7 +16,10 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        getSupportActionBar().hide();
+        ActionBar a = getSupportActionBar();
+        if (a != null){
+            a.hide();
+        }
 
         //by Ano Dzamelashvili
         new Handler().postDelayed(new Runnable() {
