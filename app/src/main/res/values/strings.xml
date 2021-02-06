@@ -2,4 +2,14 @@
     <string name="app_name">PhrasesAppForFinalExam</string>
     <string name="created">Created by Ano Dzamelashvili and Goderdzi Valishvili</string>
     <string name="app_name2">Ask Me</string>
+    <string name="login">ავტორიზაცია</string>
+    <string name="register">რეგისტრაცია</string>
+    <string name="daregistrirdi">დარეგისტრირდი</string>
+    <string name="are_you_new">ახალი ხარ?</string>
+    <string name="goBack">უკან დაბრუნება</string>
+    <string name="email">იმეილი</string>
+    <string name="password">პაროლი</string>
+    <string name="name">სახელი</string>
+    <string name="surname">გვარი</string>
+
 </resources>
