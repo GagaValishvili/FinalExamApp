@@ -9,7 +9,9 @@
     <string name="goBack">უკან დაბრუნება</string>
     <string name="email">იმეილი</string>
     <string name="password">პაროლი</string>
-    <string name="name">სახელი</string>
-    <string name="surname">გვარი</string>
+    <string name="fullName">სრული სახელი</string>
+    <string name="logout">გასვლა</string>
+    <string name="menu">მენიუ</string>
+    <string name="welcome">Welcome!</string>
 
 </resources>

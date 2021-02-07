@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MainActivity extends AppCompatActivity {
-    TextView username;
+    TextView nameView, surnameView;
     FirebaseAuth myAuth;
     FirebaseFirestore myFireStore;
     String user;
@@ -34,13 +34,15 @@ public class MainActivity extends AppCompatActivity {
         myAuth = FirebaseAuth.getInstance();
         myFireStore = FirebaseFirestore.getInstance();
 
-        username = findViewById(R.id.textView);
+        nameView = findViewById(R.id.nameView);
+        surnameView = findViewById(R.id.surnameView);
         user = myAuth.getCurrentUser().getUid();
         DocumentReference docs = myFireStore.collection("Users").document(user);
         docs.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                username.setText(value.getString("Name"));
+                nameView.setText(value.getString("Name"));
+                surnameView.setText(value.getString("Surname"));
             }
         });
 
