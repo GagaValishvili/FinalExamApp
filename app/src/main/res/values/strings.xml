@@ -15,6 +15,9 @@
     <string name="text">text</string>
     <string name="menu">მენიუ</string>
     <string name="welcome">Welcome!</string>
+    <string name="birthDate">დაბადების თარიღი:</string>
+    <string name="fullName2">სრული სახელი:</string>
+    <string name="email2">იმეილი:</string>
     <string name="userInfo">ჩემი ინფორმაცია</string>
     <string name="lovePhrases">სასიყვარულო ფრაზები</string>
     <string name="interestingPhrases">ბრძნული გამონათქვამები</string>
