@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,7 +31,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
-    private Button register, goBack, calendar;
+    private Button register, goBack;
+    private ImageButton calendar;
     private EditText fullName, password, email, date1;
     private FirebaseAuth finalAuth;
     private FirebaseFirestore finalStore;
@@ -102,6 +104,7 @@ public class Register extends AppCompatActivity {
     public void RegisterCode() {
         String regFullName = fullName.getText().toString();
         String regEmail = email.getText().toString();
+        String regBirthDate = date1.getText().toString();
         String regPassword = password.getText().toString();
 
 
@@ -127,6 +130,7 @@ public class Register extends AppCompatActivity {
                     DocumentReference myRef = finalStore.collection("Users").document(userID);
                     Map<String, Object> user = new HashMap<>();
                     user.put("Full Name", regFullName);
+                    user.put("Birth Date", regBirthDate);
                     user.put("Email", regEmail);
                     myRef.set(user);
                     Toast.makeText(Register.this,"თქვენ წარმატებით დარეგისტრირდით!", Toast.LENGTH_SHORT).show();

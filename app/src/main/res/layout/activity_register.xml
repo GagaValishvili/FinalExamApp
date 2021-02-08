@@ -52,6 +52,7 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textColorHint="#000000"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -66,6 +67,7 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColorHint="#000000"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -78,24 +80,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="172dp"
-        android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/fullName"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.894" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/date1"
         android:layout_width="174dp"
         android:layout_height="41dp"
         android:ems="10"
+        android:hint="@string/day_month_year"
         android:inputType="date"
+        android:textColorHint="#000000"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
@@ -103,13 +107,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442" />
 
-    <Button
+    <ImageButton
         android:id="@+id/calendar"
         android:layout_width="31dp"
         android:layout_height="41dp"
         android:layout_marginStart="96dp"
         android:layout_marginEnd="2dp"
-        android:text="Button"
+        android:background="@drawable/calendaricon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/date1"
         app:layout_constraintStart_toStartOf="parent"

@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.318" />
 
     <TextView
-        android:id="@+id/nameView"
+        android:id="@+id/fullNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -35,17 +35,30 @@
         app:layout_constraintVertical_bias="0.383" />
 
     <TextView
-        android:id="@+id/surnameView"
+        android:id="@+id/emailView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:textSize="22sp"
         android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
+        app:layout_constraintVertical_bias="0.426" />
+
+    <TextView
+        android:id="@+id/dateView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469" />
 
     <android.widget.Button
         android:id="@+id/logOut"
@@ -72,5 +85,94 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.553" />
+
+    <TextView
+        android:id="@+id/iconView"
+        android:layout_width="271dp"
+        android:layout_height="444dp"
+        android:layout_marginTop="137dp"
+        android:layout_marginBottom="137dp"
+        android:background="@drawable/icon_shape"
+        android:paddingLeft="50dp"
+        android:paddingTop="30dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.461" />
+
+    <android.widget.Button
+        android:id="@+id/userInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape2"
+        android:text="@string/userInfo"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/fullNameView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
+    <android.widget.Button
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape2"
+        android:text="@string/close"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu"
+        app:layout_constraintVertical_bias="0.385" />
+
+    <android.widget.Button
+        android:id="@+id/lovePhrases"
+        android:layout_width="159dp"
+        android:layout_height="43dp"
+        android:background="@drawable/button_shape2"
+        android:text="@string/lovePhrases"
+        android:textSize="8sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478" />
+
+    <android.widget.Button
+        android:id="@+id/funnyPhrases"
+        android:layout_width="159dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="104dp"
+        android:background="@drawable/button_shape2"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <android.widget.Button
+        android:id="@+id/interPhrases"
+        android:layout_width="159dp"
+        android:layout_height="43dp"
+        android:background="@drawable/button_shape2"
+        android:text="@string/interestingPhrases"
+        android:textSize="8sp"
+
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/dateView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInfo"
+        app:layout_constraintVertical_bias="0.836" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

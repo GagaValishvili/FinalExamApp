@@ -11,7 +11,12 @@
     <string name="password">პაროლი</string>
     <string name="fullName">სრული სახელი</string>
     <string name="logout">გასვლა</string>
+    <string name="day_month_year">დღე/თვე/წელი</string>
+    <string name="text">text</string>
     <string name="menu">მენიუ</string>
     <string name="welcome">Welcome!</string>
-
+    <string name="userInfo">ჩემი ინფორმაცია</string>
+    <string name="lovePhrases">სასიყვარულო ფრაზები</string>
+    <string name="interestingPhrases">ბრძნული გამონათქვამები</string>
+    <string name="close">დახურვა</string>
 </resources>
