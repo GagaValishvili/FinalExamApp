@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mellon4"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <TextView
         android:id="@+id/textView4"
@@ -64,114 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.682" />
-
-    <android.widget.Button
-        android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape1"
-        android:text="@string/menu"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58000004" />
-
-    <TextView
-        android:id="@+id/iconView"
-        android:layout_width="268dp"
-        android:layout_height="472dp"
-        android:layout_marginTop="137dp"
-        android:layout_marginBottom="137dp"
-        android:background="@drawable/icon_shape"
-        android:paddingLeft="50dp"
-        android:paddingTop="30dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="50dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
-
-    <android.widget.Button
-        android:id="@+id/userInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape2"
-        android:text="@string/userInfo"
-        android:textSize="11sp"
-        android:visibility="invisible"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/fullNameView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744" />
-
-    <android.widget.Button
-        android:id="@+id/close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape2"
-        android:text="@string/close"
-        android:visibility="invisible"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
-
-    <android.widget.Button
-        android:id="@+id/lovePhrases"
-        android:layout_width="159dp"
-        android:layout_height="43dp"
-        android:background="@drawable/button_shape2"
-        android:text="@string/LovePhrases"
-        android:textSize="9sp"
-        android:visibility="invisible"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <android.widget.Button
-        android:id="@+id/moviePhrases"
-        android:layout_width="159dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="106dp"
-        android:background="@drawable/button_shape2"
-        android:text="@string/MoviePhrases"
-        android:textSize="9sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lovePhrases"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <android.widget.Button
-        android:id="@+id/interPhrases"
-        android:layout_width="159dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_shape2"
-        android:text="@string/interestingPhrases"
-        android:textSize="9sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/lovePhrases"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo"
-        app:layout_constraintVertical_bias="0.0" />
 
 
     <TextView
@@ -322,4 +215,21 @@
 
 
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

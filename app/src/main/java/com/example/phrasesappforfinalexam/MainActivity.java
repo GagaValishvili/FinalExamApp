@@ -1,11 +1,15 @@
 package com.example.phrasesappforfinalexam;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,35 +22,28 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MainActivity extends AppCompatActivity {
-    TextView fullNameView, icon1, getFullNameV, getEmailV, getDateV, menuView, userInfoHeader, fullNameView2, emailView2, dateView2;
+    TextView fullNameView, icon1, getFullNameV, getEmailV, getDateV, userInfoHeader, fullNameView2, emailView2, dateView2;
     FirebaseAuth myAuth;
-    Button menu, logOut, moviePhrases, interPhrases, lovePhrases, userInfo, close, close2;
+    Button  logOut, close2;
     FirebaseFirestore myFireStore;
     String user;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar actionBar = getSupportActionBar();
 
-        if(actionBar != null){
-            actionBar.hide();
-        }
+
+
 
         myAuth = FirebaseAuth.getInstance();
         myFireStore = FirebaseFirestore.getInstance();
 
         icon1 = findViewById(R.id.icon1);
-        menu = findViewById(R.id.menu);
         logOut = findViewById(R.id.logOut);
-        moviePhrases = findViewById(R.id.moviePhrases);
-        interPhrases = findViewById(R.id.interPhrases);
-        lovePhrases = findViewById(R.id.lovePhrases);
-        userInfo = findViewById(R.id.userInfo);
-        close = findViewById(R.id.close);
-        menuView = findViewById(R.id.iconView);
         getDateV = findViewById(R.id.getDateV);
         fullNameView = findViewById(R.id.fullNameView);
         getFullNameV = findViewById(R.id.getFullNameV);
@@ -69,40 +66,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                menu.setVisibility(View.INVISIBLE);
-                logOut.setVisibility(View.INVISIBLE);
-                menuView.setVisibility(View.VISIBLE);
-                userInfo.setVisibility(View.VISIBLE);
-                interPhrases.setVisibility(View.VISIBLE);
-                lovePhrases.setVisibility(View.VISIBLE);
-                moviePhrases.setVisibility(View.VISIBLE);
-                close.setVisibility(View.VISIBLE);
-            }
-        });
-        userInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                menuView.setVisibility(View.INVISIBLE);
-                userInfo.setVisibility(View.INVISIBLE);
-                interPhrases.setVisibility(View.INVISIBLE);
-                lovePhrases.setVisibility(View.INVISIBLE);
-                moviePhrases.setVisibility(View.INVISIBLE);
-                close.setVisibility(View.INVISIBLE);
-                userInfoHeader.setVisibility(View.VISIBLE);
-                icon1.setVisibility(View.VISIBLE);
-                close2.setVisibility(View.VISIBLE);
-                fullNameView2.setVisibility(View.VISIBLE);
-                emailView2.setVisibility(View.VISIBLE);
-                dateView2.setVisibility(View.VISIBLE);
-                getDateV.setVisibility(View.VISIBLE);
-                getEmailV.setVisibility(View.VISIBLE);
-                getFullNameV.setVisibility(View.VISIBLE);
-
-            }
-        });
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,64 +88,48 @@ public class MainActivity extends AppCompatActivity {
                 getEmailV.setVisibility(View.INVISIBLE);
                 getFullNameV.setVisibility(View.INVISIBLE);
                 userInfoHeader.setVisibility(View.INVISIBLE);
-                menuView.setVisibility(View.VISIBLE);
-                userInfo.setVisibility(View.VISIBLE);
-                interPhrases.setVisibility(View.VISIBLE);
-                lovePhrases.setVisibility(View.VISIBLE);
-                moviePhrases.setVisibility(View.VISIBLE);
-                close.setVisibility(View.VISIBLE);
 
             }
         });
-
-        interPhrases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = interPhrases.getText().toString();
-                Intent intent = new Intent(MainActivity.this, ActivityPage.class);
-                intent.putExtra("abc", text);
-                startActivity(intent);
-            }
-        });
-
-        lovePhrases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = lovePhrases.getText().toString();
-                Intent intent = new Intent(MainActivity.this, ActivityPage.class);
-                intent.putExtra("abc", text);
-                startActivity(intent);
-            }
-        });
-
-        moviePhrases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = moviePhrases.getText().toString();
-                Intent intent = new Intent(MainActivity.this, ActivityPage.class);
-                intent.putExtra("abc", text);
-                startActivity(intent);
-
-            }
-        });
-
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                menu.setVisibility(View.VISIBLE);
-                logOut.setVisibility(View.VISIBLE);
-                menuView.setVisibility(View.INVISIBLE);
-                userInfo.setVisibility(View.INVISIBLE);
-                interPhrases.setVisibility(View.INVISIBLE);
-                lovePhrases.setVisibility(View.INVISIBLE);
-                moviePhrases.setVisibility(View.INVISIBLE);
-                close.setVisibility(View.INVISIBLE);
-
-            }
-        });
-
-
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int myId = item.getItemId();
+        if (myId == R.id.userInfoHeader) {
+            userInfoHeader.setVisibility(View.VISIBLE);
+            icon1.setVisibility(View.VISIBLE);
+            close2.setVisibility(View.VISIBLE);
+            fullNameView2.setVisibility(View.VISIBLE);
+            emailView2.setVisibility(View.VISIBLE);
+            dateView2.setVisibility(View.VISIBLE);
+            getDateV.setVisibility(View.VISIBLE);
+            getEmailV.setVisibility(View.VISIBLE);
+            getFullNameV.setVisibility(View.VISIBLE);
+        } else if( myId == R.id.interPhrasesHeader) {
+            Intent intent = new Intent(MainActivity.this, ActivityPage.class);
+            intent.putExtra("abc", "ბრძნული გამონათქვამები");
+            startActivity(intent);
+        } else if(myId == R.id.lovePhrasesHeader) {
+            Intent intent = new Intent(MainActivity.this, ActivityPage.class);
+            intent.putExtra("abc", "სასიყვარულო ფრაზები");
+            startActivity(intent);
+        } else if(myId == R.id.moviePhrasesHeader) {
+            Intent intent = new Intent(MainActivity.this, ActivityPage.class);
+            intent.putExtra("abc", "ფრაზები კინო-ფილმებიდან");
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

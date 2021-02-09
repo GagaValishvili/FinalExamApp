@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/userInfoHeader"
+            android:icon="@drawable/ic_userinfo"
+            android:title="@string/userInfo"/>
+
+        <item android:id="@+id/interPhrasesHeader"
+            android:icon="@drawable/ic_interesting"
+            android:title="@string/interestingPhrases"/>
+
+        <item android:id="@+id/lovePhrasesHeader"
+            android:icon="@drawable/ic_love"
+            android:title="@string/LovePhrases"/>
+
+        <item android:id="@+id/moviePhrasesHeader"
+            android:icon="@drawable/ic_movies"
+            android:title="@string/MoviePhrases"/>
+    </group>
+
+
+</menu>
