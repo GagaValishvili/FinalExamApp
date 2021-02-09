@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextClock;
 import android.widget.TextView;
@@ -25,13 +26,17 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class ActivityPage extends AppCompatActivity {
     ListView myList;
     TextView headLine;
+    private Button close;
     FirebaseFirestore myStore;
-    DocumentReference myRef, myRef2;
+    DocumentReference myRef, myRef2, myRef3;
 
     String[] authors = {"ჯ.რ.რ ტოლკინი", "ჯექსონ ბრაუნი", "ანდრე ჟიდი", "ჩაკ პალანიკი", "დევიდ მიშელი", "ანნა რიჩი",
     "ჰარპერ ლი", "პაულო კოელიო", "ლუის კეროლი", "პიტაკუს ლორი"};
     String[] authors2 = {"ლევ ტოლსტოი", "კონსტანტინ ხაბენსკი", "ვიტალი გიბერტი", "კოკო შანელი", "ჟორჟ სანდი",
     "ალექსანდრე პუშკინი", "მარინა ცვეტაევა", "ანტონ ჩეხოვი", "მოემი", "პაულო კოელიო"};
+    String[] authors3 = {"შერეკილები", "დათა თუთაშხია", "თეთრი ბაირაღები", "დიდოსტატის მარჯვენა", "ლონდრე", "ფესვები",
+    "ნატვრის ხე", "მონანიება", "ბოდიში, თქვენ გელით სიკვდილი", "მე, ბებია, ილიკო და ილარიონი"};
+    String[] authorPhrases3 = new String[10];
     String[] authorPhrases2 = new  String[10];
     String[] authorPhrases = new String[10];
 
@@ -48,19 +53,16 @@ public class ActivityPage extends AppCompatActivity {
 
         myList = findViewById(R.id.myListView);
         headLine = findViewById(R.id.satauri);
-
+        close = findViewById(R.id.close3);
 
         Intent intent = getIntent();
         String text = intent.getStringExtra("abc");
         headLine.setText(text);
 
-
-
-
-
         myStore = FirebaseFirestore.getInstance();
         myRef = myStore.collection("InterestingPhrases").document("WPig98D4bc2ws153SDTW");
         myRef2 = myStore.collection("LovePhrases").document("fu0t0E2BM4ILQJz4glVl");
+        myRef3 = myStore.collection("MoviePhrases").document("W3qESuruPewVL1WoGZH9");
         MyAdapter adapter = new MyAdapter();
         myList.setAdapter(adapter);
 
@@ -93,6 +95,30 @@ public class ActivityPage extends AppCompatActivity {
                 authorPhrases2[7] = value.getString("8");
                 authorPhrases2[8] = value.getString("9");
                 authorPhrases2[9] = value.getString("10");
+            }
+        });
+
+        myRef3.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                authorPhrases3[0] = value.getString("1");
+                authorPhrases3[1] = value.getString("2");
+                authorPhrases3[2] = value.getString("3");
+                authorPhrases3[3] = value.getString("4");
+                authorPhrases3[4] = value.getString("5");
+                authorPhrases3[5] = value.getString("6");
+                authorPhrases3[6] = value.getString("7");
+                authorPhrases3[7] = value.getString("8");
+                authorPhrases3[8] = value.getString("9");
+                authorPhrases3[9] = value.getString("10");
+            }
+        });
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goBack = new Intent(ActivityPage.this,MainActivity.class);
+                startActivity(goBack);
             }
         });
 
@@ -133,6 +159,9 @@ public class ActivityPage extends AppCompatActivity {
                 authorName.setText(authors2[position]);
                 phrases.setText(authorPhrases2[position]);
             }
+            if (headLine.getText().toString().equals("ფრაზები კინო-ფილმებიდან"))
+                authorName.setText(authors3[position]);
+                phrases.setText(authorPhrases3[position]);
 
             return myView;
         }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PhrasesAppForFinalExam</string>
     <string name="created">Created by Ano Dzamelashvili and Goderdzi Valishvili</string>
-    <string name="app_name2">Ask Me</string>
+    <string name="app_name2">Mellon Phrases</string>
     <string name="login">ავტორიზაცია</string>
     <string name="register">რეგისტრაცია</string>
     <string name="daregistrirdi">დარეგისტრირდი</string>
@@ -15,11 +15,12 @@
     <string name="text">text</string>
     <string name="menu">მენიუ</string>
     <string name="welcome">Welcome!</string>
-    <string name="birthDate">დაბადების თარიღი:</string>
+    <string name="birthDate">თარიღი:</string>
     <string name="fullName2">სრული სახელი:</string>
     <string name="email2">იმეილი:</string>
     <string name="userInfo">ჩემი ინფორმაცია</string>
-    <string name="lovePhrases">სასიყვარულო ფრაზები</string>
+    <string name="LovePhrases">სასიყვარულო ფრაზები</string>
+    <string name="MoviePhrases">ფრაზები კინო-ფილმებიდან</string>
     <string name="interestingPhrases">ბრძნული გამონათქვამები</string>
     <string name="close">დახურვა</string>
 </resources>

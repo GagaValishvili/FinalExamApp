@@ -8,6 +8,24 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="182dp"
+        android:layout_marginEnd="182dp"
+        android:fontFamily="cursive"
+        android:text="@string/app_name2"
+        android:textColor="#FFFFFF"
+        android:textSize="65sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002" />
+
+    <TextView
         android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +37,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintVertical_bias="0.38" />
 
     <TextView
         android:id="@+id/fullNameView"
@@ -32,7 +50,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <android.widget.Button
         android:id="@+id/logOut"
@@ -51,19 +69,19 @@
         android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/menu"
         android:background="@drawable/button_shape1"
+        android:text="@string/menu"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
+        app:layout_constraintVertical_bias="0.58000004" />
 
     <TextView
         android:id="@+id/iconView"
-        android:layout_width="271dp"
-        android:layout_height="444dp"
+        android:layout_width="268dp"
+        android:layout_height="472dp"
         android:layout_marginTop="137dp"
         android:layout_marginBottom="137dp"
         android:background="@drawable/icon_shape"
@@ -86,11 +104,12 @@
         android:text="@string/userInfo"
         android:textSize="11sp"
         android:visibility="invisible"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fullNameView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.744" />
 
     <android.widget.Button
         android:id="@+id/close"
@@ -99,40 +118,44 @@
         android:background="@drawable/button_shape2"
         android:text="@string/close"
         android:visibility="invisible"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu"
-        app:layout_constraintVertical_bias="0.385" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.777" />
 
     <android.widget.Button
         android:id="@+id/lovePhrases"
         android:layout_width="159dp"
         android:layout_height="43dp"
         android:background="@drawable/button_shape2"
-        android:text="@string/lovePhrases"
-        android:textSize="8sp"
+        android:text="@string/LovePhrases"
+        android:textSize="9sp"
         android:visibility="invisible"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintVertical_bias="0.482" />
 
     <android.widget.Button
-        android:id="@+id/funnyPhrases"
+        android:id="@+id/moviePhrases"
         android:layout_width="159dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="106dp"
         android:background="@drawable/button_shape2"
-        android:text="Button"
+        android:text="@string/MoviePhrases"
+        android:textSize="9sp"
+        android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/close"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/lovePhrases"
+        app:layout_constraintVertical_bias="0.062" />
 
     <android.widget.Button
         android:id="@+id/interPhrases"
@@ -141,14 +164,15 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/button_shape2"
         android:text="@string/interestingPhrases"
-
-        android:textSize="8sp"
+        android:textSize="9sp"
+        android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/lovePhrases"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userInfo"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
         android:id="@+id/icon1"
@@ -158,16 +182,19 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <TextView
-        android:id="@+id/userInfoHeader"
+        android:id="@+id/userInfoHeader1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_shape1"
         android:text="@string/userInfo"
+        android:textSize="13sp"
+        android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -176,32 +203,37 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.306" />
 
+
+
     <TextView
         android:id="@+id/fullNameView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fullName2"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
-
-    <TextView
-        android:id="@+id/getFullNameV"
-        android:layout_width="140dp"
-        android:layout_height="16dp"
-        android:text="@string/text"
+        android:textColor="#000000"
         android:textSize="11sp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.715"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
+
+    <TextView
+        android:id="@+id/getFullNameV"
+        android:layout_width="140dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="6dp"
+        android:text="@string/text"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.388" />
@@ -209,62 +241,35 @@
     <TextView
         android:id="@+id/getEmailV"
         android:layout_width="138dp"
-        android:layout_height="17dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="4dp"
         android:text="@string/text"
+        android:textColor="@color/black"
         android:textSize="11sp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.608"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.418" />
 
     <TextView
-        android:id="@+id/getDateV"
-        android:layout_width="137dp"
-        android:layout_height="16dp"
-        android:text="@string/text"
+        android:id="@+id/emailView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email2"
+        android:textColor="#000000"
         android:textSize="11sp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
-
-    <TextView
-        android:id="@+id/emailView2"
-        android:layout_width="47dp"
-        android:layout_height="15dp"
-        android:text="@string/email2"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.417" />
-
-    <TextView
-        android:id="@+id/dateView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/birthDate"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.418" />
 
     <android.widget.Button
         android:id="@+id/close2"
@@ -273,7 +278,7 @@
         android:background="@drawable/button_shape1"
         android:text="@string/close"
         android:textColor="@color/white"
-        android:textSize="10sp"
+        android:textSize="11sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -281,5 +286,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.541" />
+
+    <TextView
+        android:id="@+id/getDateV"
+        android:layout_width="137dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/text"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/dateView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birthDate"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

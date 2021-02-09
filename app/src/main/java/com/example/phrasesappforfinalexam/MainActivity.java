@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class MainActivity extends AppCompatActivity {
     TextView fullNameView, icon1, getFullNameV, getEmailV, getDateV, menuView, userInfoHeader, fullNameView2, emailView2, dateView2;
     FirebaseAuth myAuth;
-    Button menu, logOut, funnyPhrases, interPhrases, lovePhrases, userInfo, close, close2;
+    Button menu, logOut, moviePhrases, interPhrases, lovePhrases, userInfo, close, close2;
     FirebaseFirestore myFireStore;
     String user;
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         icon1 = findViewById(R.id.icon1);
         menu = findViewById(R.id.menu);
         logOut = findViewById(R.id.logOut);
-        funnyPhrases = findViewById(R.id.funnyPhrases);
+        moviePhrases = findViewById(R.id.moviePhrases);
         interPhrases = findViewById(R.id.interPhrases);
         lovePhrases = findViewById(R.id.lovePhrases);
         userInfo = findViewById(R.id.userInfo);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         getFullNameV = findViewById(R.id.getFullNameV);
         getEmailV = findViewById(R.id.getEmailV);
         close2 = findViewById(R.id.close2);
-        userInfoHeader = findViewById(R.id.userInfoHeader);
+        userInfoHeader = findViewById(R.id.userInfoHeader1);
         fullNameView2 = findViewById(R.id.fullNameView2);
         emailView2 = findViewById(R.id.emailView2);
         dateView2 = findViewById(R.id.dateView2);
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 userInfo.setVisibility(View.VISIBLE);
                 interPhrases.setVisibility(View.VISIBLE);
                 lovePhrases.setVisibility(View.VISIBLE);
-                funnyPhrases.setVisibility(View.VISIBLE);
+                moviePhrases.setVisibility(View.VISIBLE);
                 close.setVisibility(View.VISIBLE);
             }
         });
@@ -89,8 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 userInfo.setVisibility(View.INVISIBLE);
                 interPhrases.setVisibility(View.INVISIBLE);
                 lovePhrases.setVisibility(View.INVISIBLE);
-                funnyPhrases.setVisibility(View.INVISIBLE);
+                moviePhrases.setVisibility(View.INVISIBLE);
                 close.setVisibility(View.INVISIBLE);
+                userInfoHeader.setVisibility(View.VISIBLE);
                 icon1.setVisibility(View.VISIBLE);
                 close2.setVisibility(View.VISIBLE);
                 fullNameView2.setVisibility(View.VISIBLE);
@@ -123,11 +124,12 @@ public class MainActivity extends AppCompatActivity {
                 getDateV.setVisibility(View.INVISIBLE);
                 getEmailV.setVisibility(View.INVISIBLE);
                 getFullNameV.setVisibility(View.INVISIBLE);
+                userInfoHeader.setVisibility(View.INVISIBLE);
                 menuView.setVisibility(View.VISIBLE);
                 userInfo.setVisibility(View.VISIBLE);
                 interPhrases.setVisibility(View.VISIBLE);
                 lovePhrases.setVisibility(View.VISIBLE);
-                funnyPhrases.setVisibility(View.VISIBLE);
+                moviePhrases.setVisibility(View.VISIBLE);
                 close.setVisibility(View.VISIBLE);
 
             }
@@ -153,6 +155,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        moviePhrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = moviePhrases.getText().toString();
+                Intent intent = new Intent(MainActivity.this, ActivityPage.class);
+                intent.putExtra("abc", text);
+                startActivity(intent);
+
+            }
+        });
+
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 userInfo.setVisibility(View.INVISIBLE);
                 interPhrases.setVisibility(View.INVISIBLE);
                 lovePhrases.setVisibility(View.INVISIBLE);
-                funnyPhrases.setVisibility(View.INVISIBLE);
+                moviePhrases.setVisibility(View.INVISIBLE);
                 close.setVisibility(View.INVISIBLE);
 
             }
