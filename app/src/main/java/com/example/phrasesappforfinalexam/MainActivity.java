@@ -6,6 +6,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button  logOut, close2;
     FirebaseFirestore myFireStore;
     String user;
+    ActionBar actionBar;
 
 
 
@@ -35,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#FF000000"));
+
+        actionBar.setBackgroundDrawable(colorDrawable);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
 
 
@@ -88,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 getEmailV.setVisibility(View.INVISIBLE);
                 getFullNameV.setVisibility(View.INVISIBLE);
                 userInfoHeader.setVisibility(View.INVISIBLE);
+                logOut.setVisibility(View.VISIBLE);
 
             }
         });
@@ -106,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int myId = item.getItemId();
         if (myId == R.id.userInfoHeader) {
+            logOut.setVisibility(View.INVISIBLE);
             userInfoHeader.setVisibility(View.VISIBLE);
             icon1.setVisibility(View.VISIBLE);
             close2.setVisibility(View.VISIBLE);

@@ -21,7 +21,6 @@ public class SplashScreen extends AppCompatActivity {
             a.hide();
         }
 
-        //by Ano Dzamelashvili
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
