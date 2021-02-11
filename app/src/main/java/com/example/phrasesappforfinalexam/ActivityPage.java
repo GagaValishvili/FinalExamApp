@@ -26,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class ActivityPage extends AppCompatActivity {
     ListView myList;
     TextView headLine;
-    private Button close;
+    Button close;
     FirebaseFirestore myStore;
     DocumentReference myRef, myRef2, myRef3;
 
@@ -60,13 +60,10 @@ public class ActivityPage extends AppCompatActivity {
         headLine.setText(text);
 
         myStore = FirebaseFirestore.getInstance();
-        myRef = myStore.collection("InterestingPhrases").document("WPig98D4bc2ws153SDTW");
-        myRef2 = myStore.collection("LovePhrases").document("fu0t0E2BM4ILQJz4glVl");
-        myRef3 = myStore.collection("MoviePhrases").document("W3qESuruPewVL1WoGZH9");
         MyAdapter adapter = new MyAdapter();
         myList.setAdapter(adapter);
 
-        myRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        myStore.collection("InterestingPhrases").document("WPig98D4bc2ws153SDTW").addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 authorPhrases[0] = value.getString("1");
@@ -82,7 +79,7 @@ public class ActivityPage extends AppCompatActivity {
             }
         });
 
-        myRef2.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        myStore.collection("LovePhrases").document("fu0t0E2BM4ILQJz4glVl").addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 authorPhrases2[0] = value.getString("1");
@@ -98,7 +95,7 @@ public class ActivityPage extends AppCompatActivity {
             }
         });
 
-        myRef3.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        myStore.collection("MoviePhrases").document("W3qESuruPewVL1WoGZH9").addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 authorPhrases3[0] = value.getString("1");
@@ -154,15 +151,13 @@ public class ActivityPage extends AppCompatActivity {
             if (headLine.getText().toString().equals("ბრძნული გამონათქვამები")){
                 authorName.setText(authors[position]);
                 phrases.setText(authorPhrases[position]);
-            }
-            if (headLine.getText().toString().equals("სასიყვარულო ფრაზები")) {
+            }else if (headLine.getText().toString().equals("სასიყვარულო ფრაზები")) {
                 authorName.setText(authors2[position]);
                 phrases.setText(authorPhrases2[position]);
-            }
-            if (headLine.getText().toString().equals("ფრაზები კინო-ფილმებიდან"))
+            }else if (headLine.getText().toString().equals("ფრაზები კინო-ფილმებიდან")) {
                 authorName.setText(authors3[position]);
                 phrases.setText(authorPhrases3[position]);
-
+            }
             return myView;
         }
     }

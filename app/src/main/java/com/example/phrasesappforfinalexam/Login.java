@@ -64,8 +64,10 @@ public class Login extends AppCompatActivity {
 
         if(TextUtils.isEmpty(logEmail) || TextUtils.isEmpty(logPassword)){
             Toast.makeText(Login.this, "გთხოვთ შეავსოთ ყველა ველი!", Toast.LENGTH_SHORT).show();
+            return;
         } else if (logPassword.length() < 6){
             Toast.makeText(Login.this, "პაროლის სიგრძე უნდა აღემატებოდეს 6-ს!", Toast.LENGTH_SHORT).show();
+            return;
         }
         Toast.makeText(Login.this, "გთხოვთ მოიცადოთ...", Toast.LENGTH_SHORT).show();
         finalAuth.signInWithEmailAndPassword(logEmail, logPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

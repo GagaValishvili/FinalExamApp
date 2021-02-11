@@ -13,7 +13,7 @@
         android:paddingStart="30dp"
         android:paddingEnd="20dp"
         android:text="@string/text"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="65dp" />
 
